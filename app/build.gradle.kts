@@ -4,10 +4,19 @@ plugins {
     id("org.jetbrains.kotlin.plugin.compose")
 }
 android {
-    // ... your existing namespace, compileSdk, defaultConfig, etc.
+    namespace = "com.example.voicecompanion"
+    compileSdk = 34
+
+    defaultConfig {
+        applicationId = "com.example.voicecompanion"
+        minSdk = 24
+        targetSdk = 34
+        versionCode = 1
+        versionName = "1.0"
+    }
 
     buildFeatures {
-        // Keep whatever you already have here (e.g., compose = true)
+        compose = true
     }
 
     compileOptions {
@@ -18,9 +27,6 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
-}
-
-buildFeatures { compose = true }
 }
 
 dependencies {
